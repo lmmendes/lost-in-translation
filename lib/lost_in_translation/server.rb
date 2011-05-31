@@ -43,7 +43,7 @@ module LostInTranslation
     
     post '/translation/:id' do
       @translation = Translation.find(params[:id])
-      @translation.update_attributes(params[:translation])
+      @translation.update_attributes(params[:translation].merge(:missing=>false))
       if @translation.save
         "salvo"
       else

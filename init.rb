@@ -1,1 +1,1 @@
-require File.join(File.dirname(__FILE__), 'lost_in_translation')
+require File.join(File.dirname(__FILE__), 'lib', 'lost_in_translation')
