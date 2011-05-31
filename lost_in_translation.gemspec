@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["lmmendes@gmail.com"]
   s.homepage    = ""
   s.summary     = %q{A simple internacionalization management tool with a Sinatra webinterface}
-  s.description = %q{TODO: Write a gem description}
+  s.description = %q{A simple internacionalization management tool with a Sinatra webinterface}
 
   s.rubyforge_project = "lost_in_translation"
 
