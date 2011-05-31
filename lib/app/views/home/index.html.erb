@@ -1,0 +1,11 @@
+This are not the droids that you are looking for
+
+<% if @missing.any? %>
+<ul>
+<% @missing.each do |translation|  %>
+  <li><%= translation.keyname %> ( <%= translation.locale.name %> ) </li>
+<% end %>
+</ul>
+<% else %>
+nothing missing
+<% end %>

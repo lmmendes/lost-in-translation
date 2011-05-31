@@ -1,9 +1,10 @@
 # load configuration files
-
-$stdout.puts "Loading Lost in Translation..."
-
 require 'sqlite3'
 require 'active_record'
+
+module LostInTranslation
+
+$stdout.puts "Loading Lost in Translation..."
 
 link = ActiveRecord::Base.establish_connection(:adapter => 'sqlite3', :database => File.join(Rails.root,'db/lost_in_translation-development.db'))
 
@@ -20,4 +21,7 @@ end
   'server'
 ].each do |file|
   require File.join(File.dirname(__FILE__), 'lib', file )
+end
+
+
 end

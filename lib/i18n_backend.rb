@@ -35,10 +35,13 @@ module LostInTranslation
         def log_missing_translation(locale,key)
           $stdout.puts "==> EXCEPTION: log_missing_translation"
           $stdout.puts "locale: #{locale} key: #{key}"
-          locale = LostInTranslation::Locale.find_or_create_by_name(locale)
-          translation = locale.translations.find_or_create_by_keyname( key )
-          translation.missing=1
-          locale.save!
+          LostInTranslation::Locale.transaction do
+            locale = LostInTranslation::Locale.find_or_initialize_by_name(locale)
+            locale.save!
+            translation = locale.translations.find_or_initialize_by_keyname( key )
+            translation.missing=true
+            translation.save!
+          end
         end
         
       end

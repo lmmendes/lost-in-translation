@@ -4,7 +4,7 @@ class CreateTranslations < ActiveRecord::Migration
       t.references :locale
       t.string :keyname
       t.string :value
-      t.integer :missing, :boolean, :default => false
+      t.boolean :missing, :default => 0
       t.timestamps
     end
     add_index :translations, [:locale_id, :keyname]

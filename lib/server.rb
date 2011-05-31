@@ -1,27 +1,17 @@
+require 'erb'
 
 module LostInTranslation
   class Server < Sinatra::Application
     use Rack::MethodOverride
     
+    set :views, File.expand_path(File.join(File.dirname(__FILE__), 'app', 'views'))
+    
     get '/' do
-      "These are not the droids you are looking for..."
+      #"These are not the droids you are looking for..."
+      @missing = LostInTranslation::Locale.include(:translation).where(:missing => true).group('locale.name')
+      erb 'home/index.html'.to_sym
     end
     
-    # POST
-    # :locale => 'pt'
-    # :key    => 'model.invalid_phone_number'
-    get "/translation/new" do
-      "translation missing for #{params[:locale]} key: #{params[:key]}"
-      Translation.create!
-    end
-    
-    # get the content of locale
-    get '/translation/:locale' do
-    end
-    
-    # get only the specific :locale, :key
-    get '/translation/:locale/:key' do
-    end
     
   end
 end
