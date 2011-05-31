@@ -5,7 +5,7 @@ This are not the droids that you are looking for
 <% @missing.each do |locale|  %>
   <li><%= locale.name %></li>
   <ul>
-    <% locale.translations.each do |translation| %>
+    <% locale.translations.where('translations.missing = ?', true).each do |translation| %>
     <li><%= translation.keyname %> (<a href='<%= url "/translation/#{ translation.id }" %>'>translate</a>)</li>
     <% end %>
   </ul>
