@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "lib/lost_in_translation/version"
 
 Gem::Specification.new do |s|
-  s.name        = "Lost In Translation"
+  s.name        = "lost_in_translation"
   s.version     = LostInTranslation::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Luís Mendes"]
