@@ -1,0 +1,15 @@
+<h1>Editar a tradução</h1>
+
+<form action="<%= url("translation/#{ @translation.id }") %>" method="post">
+  <p>
+    <label>Chave:</label>
+    <span><%= @translation.keyname %></span>
+  </p>
+  <p>
+    <label>Tradução</label>
+    <input type="text" name="translation[value]"value="<%= @translation.value %>">
+  </p>
+  <p>
+    <input type="submit" name="submit" value="Gravar" />
+  </p>
+</form>
