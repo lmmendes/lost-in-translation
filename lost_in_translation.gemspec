@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "lost_in_translation/lib/version"
+require "lib/lost_in_translation/version"
 
 Gem::Specification.new do |s|
   s.name        = "Lost In Translation"
