@@ -14,6 +14,10 @@ Is a I18n (internalization) management tool with a built-in web interface (Sinat
 How to install in a Rails 3 app
 --------------------------------
 
+First install the Lost in Translation as a Rails plugin:
+
+        rails plugin install git://github.com/lmmendes/lost-in-translation.git
+
 Using you favorite editor create  a file called 'lost_in_translations_i18_backend.rb' and put it inside Rais.root/config/initializers folder with the following code:
         
         I18n.backend = I18n::Backend::KeyValue.new(LostInTranslation::I18n::Backend.new)
